@@ -60,3 +60,5 @@ for i in range(0,4):
         FIRST = api.update_status(status = f"'{twt_1}'")
         SECOND = api.update_status(status = f"'{twt_2}'", in_reply_to_status_id = FIRST.id, auto_populate_reply_metadata=True)
         # Posts a thread with the whole qoute
+    
+    sleep(10800) #Tweets every 3 hours
