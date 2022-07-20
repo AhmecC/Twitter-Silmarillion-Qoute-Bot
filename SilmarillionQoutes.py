@@ -50,7 +50,7 @@ for i in range(0,4):
 
         twt_1 = " ".join(twt_1) + " - "
         twt_2 = "- " + " ".join(twt_2)
-        # If the quote exceeds 280 characters its split up and formated correctly
+        # If the quote exceeds 280 characters its split up and formated accordingly
 
     if len(C) < 280:
         api.update_status(status = f"'{C}'")
