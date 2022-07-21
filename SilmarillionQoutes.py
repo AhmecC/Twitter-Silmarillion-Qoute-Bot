@@ -12,7 +12,7 @@ authenticator = tweepy.OAuthHandler(API_KEY, API_SECRET)
 authenticator.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(authenticator, wait_on_rate_limit=True)
 
-for i in range(0,4):
+while True:
     sleep(60)
     with open("Sentences.txt", "r+") as file:
         qoutes = file.readlines()
