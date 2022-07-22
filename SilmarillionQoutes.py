@@ -38,7 +38,7 @@ while True:
 
     twt_1 = []
     twt_2 = []
-    if len(C) > 280:
+    if len(C) > 270:
         D = C.split()
         count = 0
         for i in D:
@@ -51,14 +51,15 @@ while True:
         twt_1 = " ".join(twt_1) + " - "
         twt_2 = "- " + " ".join(twt_2)
         # If the quote exceeds 280 characters its split up and formated accordingly
+        
+    if len(C) < 270:
+        single = api.update_status(status = f"'{C}'\n\n#RingsOfPower #lotr")
+        api.create_favorite(id=single.id)  # Posts and then likes own tweet
 
-    if len(C) < 280:
-        api.update_status(status = f"'{C}'")
-        # Posts a tweet
-
-    if len(C) > 280:
-        FIRST = api.update_status(status = f"'{twt_1}'")
-        SECOND = api.update_status(status = f"'{twt_2}'", in_reply_to_status_id = FIRST.id, auto_populate_reply_metadata=True)
-        # Posts a thread with the whole qoute
+    if len(C) > 270:
+        FIRST = api.update_status(status = f"'{twt_1} '")
+        SECOND = api.update_status(status = f"'{twt_2}'\n\n#RingsOfPower #lotr", in_reply_to_status_id = FIRST.id, auto_populate_reply_metadata=True)
+        api.create_favorite(id=FIRST.id)
+        api.create_favorite(id=SECOND.id)
     
     sleep(10800) #Tweets every 3 hours
