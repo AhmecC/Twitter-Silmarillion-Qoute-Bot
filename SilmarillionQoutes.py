@@ -56,7 +56,7 @@ while True:
         single = api.update_status(status = f"'{C}'\n\n#RingsOfPower #lotr")
         api.create_favorite(id=single.id)  # Posts and then likes own tweet
 
-    if len(C) > 260:
+    if len(C) >= 260:
         FIRST = api.update_status(status = f"'{twt_1} '")
         SECOND = api.update_status(status = f"'{twt_2}'\n\n#RingsOfPower #lotr", in_reply_to_status_id = FIRST.id, auto_populate_reply_metadata=True)
         api.create_favorite(id=FIRST.id)
