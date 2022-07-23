@@ -1,7 +1,7 @@
-#Follow the Twitter Bot : https://twitter.com/SilmarillionQo1
+#Follow the Twitter Bot : 
 
 **Description:**
-> This bot posts quotes from the J.R.R Tolkien book the Silmarillion every 3 hours.
+> This [bot](https://twitter.com/SilmarillionQo1) posts quotes from the J.R.R Tolkien book the Silmarillion every 3 hours.
 
 
 **Updates:**
