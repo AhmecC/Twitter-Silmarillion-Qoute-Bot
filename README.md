@@ -8,3 +8,4 @@ Updates:
 
 Upcoming Updates:
 > Generate Qoutes on Image Instead (that relates to each chapter)
+> Ability to like posts on feed
