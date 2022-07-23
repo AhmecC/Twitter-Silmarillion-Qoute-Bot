@@ -6,3 +6,5 @@ Description:
 Updates:
 > [22/07/22 - Added functionality to like own tweets]
 
+Upcoming Updates:
+> Generate Qoutes on Image Instead (that relates to each chapter)
