@@ -9,6 +9,7 @@
 
 **Upcoming Updates**
 > - Ability to like posts on feed
+> - Improvements to images where its hard to see text
 
 
 **Process**
