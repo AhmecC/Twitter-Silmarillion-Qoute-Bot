@@ -5,9 +5,9 @@
 
 **Updates:**
 > - 22/07/22 - Added functionality to like own tweets
+> - 24/07/22 - Bot now creates images which display the quote on it
 
 **Upcoming Updates:**
-> - Generate Quotes on Images instead
 > - Ability to like posts on feed
 
 
