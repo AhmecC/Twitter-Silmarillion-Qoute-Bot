@@ -8,8 +8,9 @@
 > - 24/07/22 - Bot now creates images which display the quote on it
 
 **Upcoming Updates**
-> - Ability to like posts on feed
-> - Improvements to images where its hard to see text
+> - Improve Image Text Visibilty (Increase Size of text)
+> - Fix Issue for coding not running every 3 hours
+> - Add Ability to like posts on feed
 
 
 **Process**
