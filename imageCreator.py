@@ -7,42 +7,29 @@ class imageCreator():
         self.CHOSEN = CHOSEN
         self.CHOICE = CHOICE
         self.create()
+    
+    def shadow_box(self,w, h, draw):
+        shape = [352+(w/2), 217-(h/2), 338-(w/2), 230+(h/2)]  # Specifies Bottom Left and Top Right Coordinates for Box (with some padding)
+        draw.rectangle(shape, fill=(0, 0, 0, 70))
 
     def create(self):
-        if len(self.CHOSEN) <= 180:
-            size = 25
+        if len(self.CHOSEN) <= 180:  # Font size determined by char length
+            size = 26
         else:
-            size = 23
+            size = 24
 
-
-        self.CHOSEN = textwrap.fill(text=self.CHOSEN, width=50)  # Wraps Text
-        width = 690
-        height = 447
+        self.CHOSEN = textwrap.fill(text=self.CHOSEN, width=55)  # Wraps Text
+        width = 690  
+        height = 447 
         message = f"{self.CHOSEN}"
-
         font = ImageFont.truetype("Courgette-Regular.ttf", size=size)
         bgIMG = Image.open(f"Silmarillion/{self.CHOICE}/{self.CHOICE}.jpg")
 
-        if self.CHOICE != "Chap 7": # Use Black Text instead of White
-            shadow = ImageDraw.Draw(bgIMG)
-            textWidth, textHeight = shadow.textsize(message, font=font)
-            xShad = ((width - textWidth)/2) - 1
-            yShad = ((height - textHeight)/2) + 1
-            shadow.text((xShad, yShad), message, font=font, fill=(0, 0, 0, 128))
+        imgDraw = ImageDraw.Draw(bgIMG, "RGBA")
+        textWidth, textHeight = imgDraw.textsize(message, font=font)
+        self.shadow_box(textWidth, textHeight, imgDraw)
+        xText = (width - textWidth) / 2
+        yText = (height - textHeight) / 2
+        imgDraw.text((xText, yText), message, font=font, fill=(255, 255, 255))
 
-            imgDraw = ImageDraw.Draw(bgIMG)
-            textWidth, textHeight = imgDraw.textsize(message, font=font)
-            xText = (width - textWidth) / 2
-            yText = (height - textHeight) / 2
-            imgDraw.text((xText, yText), message, font=font, fill=(255, 255, 255))
-
-            bgIMG.save('result.png')
-
-        else:
-            imgDraw = ImageDraw.Draw(bgIMG)
-            textWidth, textHeight = imgDraw.textsize(message, font=font)
-            xText = (width - textWidth) / 2
-            yText = (height - textHeight) / 2
-            imgDraw.text((xText, yText), message, font=font, fill=(0, 0, 0))
-
-            bgIMG.save('result.png')
+        bgIMG.save('result.png')
