@@ -14,7 +14,10 @@ authenticator = tweepy.OAuthHandler(API_KEY, API_SECRET)
 authenticator.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(authenticator, wait_on_rate_limit=True)
 
+
+# -------------------- CREATE/SEND/INTERACT WITH TWEETS -------------------- #
 def formatter(CHOSEN):
+    """Ensures the spacing of the sentence is correct"""
     text = CHOSEN.split(" ")
     text = " ".join(text)
     quote = f"'{text[:-1]}'"
@@ -22,20 +25,20 @@ def formatter(CHOSEN):
 
 START = True
 while START:
-    CHOICE = f"Chap {random.randint(1,28)}"
+    CHOICE = f"Chap {random.randint(1,28)}"  # Chooses Chap where Quote will come from
 
     with open(f"Silmarillion/{CHOICE}/{CHOICE}.txt", encoding="utf-8") as file:
         quotes = file.readlines()
         CHOSEN = random.choice(quotes)
-        quotes.remove(CHOSEN)
+        quotes.remove(CHOSEN)  # Chooses a Quote from specified chapter and then deletes it from file
 
     with open(f"Silmarillion/{CHOICE}/{CHOICE}.txt","w", encoding="utf-8") as f:
         for i in quotes:
             f.write(i)
 
 
-    names = ["Durin", "Elrond", "Galadriel", "Númenor", "Lindon", "Isildur", "Gil-galad", "Elendil", "Finrod", "Ar-Pharazôn"] 
-    hash = ["#RingsOfPower", "#lotr",]  # If relevant name is found in quote is created into a hashtag
+    names = ["Durin", "Elrond", "Galadriel", "Númenor", "Lindon", "Isildur", "Gil-galad", "Elendil", "Finrod", "Ar-Pharazôn", "Sauron"] 
+      hash = ["#TheRingsOfPower", "#amazon", "#LordoftheRings", "#tolkien"]  # If relevant name is found in quote is created into a hashtag
     for i in names:
         if i in CHOSEN:
             hash.append(f"#{i}")
@@ -43,9 +46,7 @@ while START:
 
     CHOSEN = formatter(CHOSEN)
     
-    a = imageCreator(CHOSEN, CHOICE)
-    print("Generated")
-    print(hash)
+    a = imageCreator(CHOSEN, CHOICE)  # Creates the image itself
 
     media = api.media_upload("result.png")
     hashtags = " ".join(hash)
