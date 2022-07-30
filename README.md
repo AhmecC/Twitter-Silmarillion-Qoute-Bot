@@ -6,9 +6,9 @@
 **Updates**
 > - 22/07/22 - Added functionality to like own tweets
 > - 24/07/22 - Bot now creates images which display the quote on it
+> - 30/07/22 - Improved text visibility by adding a opaque box around text
 
 **Upcoming Updates**
-> - Improve Image Text Visibilty (Increase Size of text)
 > - Fix Issue for coding not running every 3 hours
 > - Add Ability to like posts on feed
 
