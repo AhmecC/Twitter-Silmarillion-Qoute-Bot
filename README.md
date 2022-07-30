@@ -7,9 +7,9 @@
 > - 22/07/22 - Added functionality to like own tweets
 > - 24/07/22 - Bot now creates images which display the quote on it
 > - 30/07/22 - Improved text visibility by adding a opaque box around text
+> - 30/07/22 - Now tweets every 2 hours from 8am-10pm
 
 **Upcoming Updates**
-> - Fix Issue for coding not running every 3 hours
 > - Add Ability to like posts on feed
 
 
