@@ -1,6 +1,6 @@
 
 **Description**
-> This [bot](https://twitter.com/SilmarillionQo1) posts images with quotes from the J.R.R Tolkien book the Silmarillion every 3 hours.
+> This [bot](https://twitter.com/SilmarillionQo1) posts images with quotes from the J.R.R Tolkien book the Silmarillion every 2 hours between 8am and 10pm
 
 
 **Updates**
