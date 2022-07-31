@@ -25,6 +25,7 @@ def formatter(CHOSEN):
     return quote
 
 def main():
+    """Determines the quote, puts through functions and tweets out"""
     CHOICE = f"Chap {random.randint(1,28)}"  # Chooses Chap where Quote will come from
 
     with open(f"Silmarillion/{CHOICE}/{CHOICE}.txt", encoding="utf-8") as file:
