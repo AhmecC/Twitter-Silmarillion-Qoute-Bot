@@ -49,16 +49,26 @@ def main():
     
     
 # -------------------- SCHEDULER -------------------- #
-schedule.every().day.at("08:00").do(main)
-schedule.every().day.at("10:00").do(main)
-schedule.every().day.at("12:00").do(main)
-schedule.every().day.at("14:00").do(main)
-schedule.every().day.at("16:00").do(main)
-schedule.every().day.at("18:00").do(main)
-schedule.every().day.at("20:00").do(main)
-schedule.every().day.at("22:00").do(main)
+def checker():
+    tp = int(time.time()) % 86400 
+    # Supposed to print on even times, need to adjust range times
+  
+    if 28740 <= tp <= 28860:  # 8am (but prints at 9am)
+        main()
+    elif 35940 <= tp <= 36060:  #10am (but prints at 11am)
+        main()
+    elif 43140 <= tp <= 43260:  #12am (but prints at 1pm)
+        main()
+    elif 50340 <= tp <= 50460:  #2pm (but prints at 3pm)
+        main()
+    elif 57540 <= tp <= 57660:  #4pm (but prints at 5pm)
+        main()
+    elif 64740 <= tp <= 64860:  #6pm (but prints at 7pm)
+        main()
+    elif 71940 <= tp <= 72060:  #8pm (but prints at 9pm)
+        main()
+
 
 while True:
-    schedule.run_pending()
-    sleep(1)
-    
+    time.sleep(30)
+    checker()
