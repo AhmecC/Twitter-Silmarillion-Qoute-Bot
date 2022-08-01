@@ -60,5 +60,5 @@ def checker():
                 main()
 
 while True:
-    time.sleep(120)  # Every 30s check if time is correct
+    time.sleep(120)  # Every 120s check if time is correct
     checker()
