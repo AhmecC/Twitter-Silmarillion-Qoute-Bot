@@ -51,25 +51,14 @@ def main():
     
 # -------------------- SCHEDULER -------------------- #
 def checker():
-    tp = int(time.time()) % 86400 
-    # Supposed to print on even times, need to adjust range times
-  
-    if 28740 <= tp <= 28860:  # 8am (but prints at 9am)
-        main()
-    elif 35940 <= tp <= 36060:  #10am (but prints at 11am)
-        main()
-    elif 43140 <= tp <= 43260:  #12am (but prints at 1pm)
-        main()
-    elif 50340 <= tp <= 50460:  #2pm (but prints at 3pm)
-        main()
-    elif 57540 <= tp <= 57660:  #4pm (but prints at 5pm)
-        main()
-    elif 64740 <= tp <= 64860:  #6pm (but prints at 7pm)
-        main()
-    elif 71940 <= tp <= 72060:  #8pm (but prints at 9pm)
-        main()
+    tp = (int(time.time()) % 86400) + 60*60  # Adjusts for time discrepancy
+    times = [28800,36000,43200,50400,57600,64800,72000]
 
+    if 28700 <= tp <= 72100: # if between 8am-8pm
+        for i in times:
+            if i-60 <= tp <= i+60:
+                main()
 
 while True:
-    time.sleep(30)
+    time.sleep(120)  # Every 30s check if time is correct
     checker()
