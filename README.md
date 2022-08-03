@@ -9,5 +9,11 @@ This [bot](https://twitter.com/SilmarillionQo1) posts images with quotes from th
 > - 31/07/22 - Now tweets every 2 hours from 8am-8pm
 
 
-## **Process**
-> The file textConverter.py was obtained from [this thread](https://stackoverflow.com/questions/4576077/how-can-i-split-a-text-into-sentences) and with some changes it was used to split the Silmarillion into sentences. As i wanted a background image that was relevant to each chapter, i placed each chapter into its own folder along with a relevant image. The programme runs every 3 hours and chooses a random file and then a random quote from the selected chapter. Then the imageCreator places this text in a suitable fashion ontop of the background image. This is relayed back to the main programme which sends it off as a tweet. The programme also looks for currently relevant characters in the text and creates hashtags to boost engagement and can like its own tweets. It is running 24/7 on replit. The font used for the quote can be obtained [here](https://fonts.google.com/specimen/Courgette?query=courgette)
+## ***The Process***
+- First textConverty.py, which was obtained from [this thread](https://stackoverflow.com/questions/4576077/how-can-i-split-a-text-into-sentences), was used to split The Silmarillion into sentences
+- As full stops inside Quotation Marks weren't caught by the programme, some sentences had to be manually formatted
+- A folder was created for each chapter, containing a related image and text file with sentences from that chapter
+- SilmarillionQoutes.py runs every 2 hours between 8am and 8pm and chooses a random quote and tweets it out
+- It also looks for specific words in that quote that are made to be hashtags
+- imageCreator.py creates the background image and places the quotes text onto the image using [this font](https://fonts.google.com/specimen/Courgette?query=courgette)
+- The Code is ran on replit 24/7
