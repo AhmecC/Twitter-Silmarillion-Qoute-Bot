@@ -1,4 +1,3 @@
-
 **Description**
 > This [bot](https://twitter.com/SilmarillionQo1) posts images with quotes from the J.R.R Tolkien book the Silmarillion every 2 hours between 8am and 10pm
 
@@ -8,7 +7,6 @@
 > - 24/07/22 - Bot now creates images which display the quote on it
 > - 30/07/22 - Improved text visibility by adding an opaque box around text
 > - 31/07/22 - Now tweets every 2 hours from 8am-8pm
-
 
 
 **Process**
